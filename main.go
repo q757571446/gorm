@@ -876,6 +876,6 @@ func (s *DB) log(v ...interface{}) {
 
 func (s *DB) slog(sql string, t time.Time, vars ...interface{}) {
 	if s.logMode == detailedLogMode {
-		s.print("sql", fileWithLineNum(), NowFunc().Sub(t), sql, vars, s.RowsAffected)
+		s.print("sql", fileWithLineNumSql(), NowFunc().Sub(t), sql, vars, s.RowsAffected)
 	}
 }
